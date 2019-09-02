@@ -1,6 +1,5 @@
 package com.example.testingApachePOI.service;
 
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -8,16 +7,11 @@ import java.util.Iterator;
 import java.util.List;
 
 import org.apache.commons.collections4.IteratorUtils;
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import org.apache.poi.openxml4j.opc.OPCPackage;
-import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
-import org.apache.poi.openxml4j.opc.OPCPackage;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.stereotype.Service;
 
 import com.example.testingApachePOI.entity.Person;
@@ -26,7 +20,7 @@ import lombok.Cleanup;
 @Service
 public class PersonService {
 
-    public List<Person> createPerson() throws IOException, InvalidFormatException {
+    public List<Person> createPerson() throws IOException {
 
         @Cleanup FileInputStream fileInputStream = new FileInputStream("src/main/resources/PersonAge.xlsx");
 
